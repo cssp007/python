@@ -1,0 +1,41 @@
+{% extends "head-footer.html" %}
+    {% block content %}
+
+     {% for item in posts %}
+<br>
+    <div class="text-left ml-3 mt-5">
+         <h3><u><b>Know more about <font class="text-danger">{{item.subject}}</font>.</b></u></h3>
+        <font class="text-danger">Note:</font> Info Type (1=ERROR, 2=WARNING, 3=INFORMATION)
+	 </div>
+<br>
+     <div class="ml-3">
+     <h3 class="text-center"><font class="text-primary">Subject:</font> {{item.subject}}</h3>
+    </div>
+<hr>
+    <div class="ml-3">
+     <h5><font class="text-primary">Info Type:</font> {{item.infoType}}</h5>
+    </div>
+<hr>
+     <div class="ml-3">
+     <h5><font class="text-primary">Steps:</font> {{item.steps}}</h5>
+    </div>
+<hr>
+     <div class="ml-3">
+     <h5><font class="text-primary">Related SFDC Case ID:</font> {{item.sfdcID}}</h5>
+    </div>
+<hr>
+    <div class="ml-3">
+        <h5><font class="text-danger">Related ESSWIKI Link:</font> <a href="">{{item.esswiki}}</a></h5>
+    </div>
+<hr>
+    <div class="ml-3">
+        <h5><font class="text-danger">Related ESSJIRA Link:</font> <a href="">{{item.essjira}}</a></h5>
+    </div>
+<hr>
+<h5 class="ml-3"><a href="/post-update/{{item.slug}}"><b>UPDATE POST</b></a>
+    <a href="/post-delete/{{item.slug}}" class="text-danger ml-5"><b>DELETE POST</b></a></h5>
+
+
+
+     {% endfor %}
+     {% endblock %}

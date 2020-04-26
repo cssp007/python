@@ -1,0 +1,22 @@
+{% extends "head-footer.html" %}
+    {% block content %}
+<br>
+	 <div class="text-left ml-5 mt-5">
+	      <h3>Below are the Data60 <font class="text-danger">ERROR</font>, <font class="text-warning">WARNINGS</font> and <font class="text-info">INFORMATION</font>.</h3>
+	 </div>
+	 
+	 <div class="mt-5 ml-5">
+     {% for item in posts %}
+        {% if '1' in item.infoType %}
+        <h5><a href="/post-details/{{item.slug}}"> <font class="text-danger">{{item.subject}} </font></a></h5>
+        {% endif %}
+        {% if '2' in item.infoType %}
+        <h5><a href="/post-details/{{item.slug}}"> <font class="text-warning">{{item.subject}} </font></a></h5>
+        {% endif %}
+        {% if '3' in item.infoType %}
+        <h5><a href="/post-details/{{item.slug}}"> <font class="text-info">{{item.subject}} </font></a></h5>
+        {% endif %}
+      <hr>
+     {% endfor %}
+    </div>
+    {% endblock %}

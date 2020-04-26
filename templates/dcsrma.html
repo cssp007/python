@@ -1,0 +1,15 @@
+{% extends "head-footer.html" %}
+    {% block content %}
+<br>
+	 <div class="text-left mt-5 ml-5">
+	      <h2><u><b>Know about <font class="text-info">DSC RMA Process</font>.</b></u></h2>
+	 </div>
+
+    <div class="mt-5 ml-5">
+     {% for item in posts %}
+        <h4><a href="/process-details/{{item.slug}}"> {{item.subject}} </a></h4>
+      <hr>
+     {% endfor %}
+    </div>
+    {% endblock %}
+	 
